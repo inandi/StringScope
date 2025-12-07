@@ -1,71 +1,125 @@
-# StringScope (wave-0.0.1)
+<div align="center">
+  <h1>StringScope [Beta]</h1>
+  <p><strong>Your String Analysis Assistant for VS Code</strong></p>
+</div>
 
-This is the README for your extension "stringscope". After writing up a brief description, we recommend including the following sections.
+Need to quickly check string length, character indices, or ASCII values? StringScope provides instant string analysis right in your VS Code status bar with detailed character information at your fingertips!
 
-## Features
+## What is StringScope?
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+StringScope is a lightweight VS Code extension that helps you analyze selected text strings in real-time. Whether you're debugging string operations, working with character encodings, or just need to know the exact length of a string, StringScope displays all the information you need directly in your status bar.
 
-For example if there is an image subfolder under your extension project workspace:
+## Why Use StringScope?
 
-\!\[feature X\]\(images/feature-x.png\)
+- **Instant Feedback**: See string length immediately when you select text
+- **Character Details**: Click to view comprehensive character information including index positions, ASCII values, and Unicode code points
+- **Smart Detection**: Automatically detects quoted strings and shows content length (without quotes)
+- **Works Everywhere**: Works with any text selection - quoted strings, regular text, or multiline strings
+- **No Configuration**: Works out of the box with zero setup required
+- **Clean UI**: Status bar indicator only appears when you need it
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Getting Started
+
+### Installation
+
+1. Open VS Code
+2. Go to the Extensions view (Ctrl+Shift+X / Cmd+Shift+X)
+3. Search for "StringScope"
+4. Click Install
+
+### First Steps
+
+1. **Select Some Text**: Highlight any text in your editor (with or without quotes)
+2. **See the Length**: Look at the bottom-right corner of VS Code (status bar) - you'll see `StringScope: [length]`
+3. **View Details**: Click on the status bar indicator to see detailed character information
+4. **Explore**: Try selecting different types of text:
+   - Regular text: `Hello World`
+   - Quoted strings: `"Gobinda Nandi"`
+   - Multiline strings: `"Line 1\nLine 2"`
+
+## How It Works
+
+### Status Bar Indicator
+
+When you select text in your editor, StringScope automatically:
+- Shows the string length in the status bar
+- For quoted strings (single or double quotes), displays the content length without the quotes
+- For regular text, displays the total selection length
+- Hides automatically when nothing is selected
+
+### Character Details Dialog
+
+Click the status bar indicator to open a detailed character analysis dialog showing:
+
+1. **Index Position**: Each character's position (0-based)
+2. **Display Character**: The character itself (with special symbols for control characters)
+3. **ASCII Value**: ASCII code for ASCII characters
+4. **Unicode Code Point**: Unicode value in U+XXXX format
+5. **Character Name**: Human-readable name (Space, Line Feed, Printable ASCII, etc.)
+6. **Decimal Value**: Character code in decimal
+7. **Hexadecimal Value**: Character code in hexadecimal (0xXX)
+
+### Special Character Display
+
+StringScope uses special symbols to visualize control characters:
+- **Space**: `␣`
+- **Newline**: `↵`
+- **Tab**: `⇥`
+- **Null**: `␀`
+- **Non-printable**: `[code]`
+
+### Example
+
+Select the string `"Hello"` and you'll see:
+- Status bar shows: `StringScope: 5` (length without quotes)
+- Click to see:
+  - `0: H` → ASCII: 72 | U+0048 → Printable ASCII | Decimal: 72 | Hex: 0x48
+  - `1: e` → ASCII: 101 | U+0065 → Printable ASCII | Decimal: 101 | Hex: 0x65
+  - `2: l` → ASCII: 108 | U+006C → Printable ASCII | Decimal: 108 | Hex: 0x6C
+  - `3: l` → ASCII: 108 | U+006C → Printable ASCII | Decimal: 108 | Hex: 0x6C
+  - `4: o` → ASCII: 111 | U+0075 → Printable ASCII | Decimal: 111 | Hex: 0x6F
+
+## Tips & Tricks
+
+- **Quick Length Check**: Just select text to instantly see its length - no need to count characters manually
+- **Debugging Strings**: Use character details to debug string encoding issues or verify special characters
+- **Quoted Strings**: When working with quoted strings, StringScope automatically shows the content length (without quotes)
+- **Multiline Support**: Works perfectly with multiline strings - select across multiple lines to see the full length
+- **Keyboard Selection**: Works with both mouse selection and keyboard selection (Shift+Arrow keys)
+- **Any Text**: Works with any text selection - code, comments, strings, or plain text
+
+## Use Cases
+
+- **String Length Verification**: Quickly verify string lengths during development
+- **Character Encoding Debugging**: Check ASCII and Unicode values when debugging encoding issues
+- **String Manipulation**: Understand exact character positions when working with string operations
+- **Code Review**: Verify string lengths and character composition during code reviews
+- **Learning**: Explore character encodings and Unicode values interactively
+
+## Support the Project
+
+If StringScope has made your development workflow easier, consider supporting its development:
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/igobinda)
+
+Your support helps keep this extension free and continuously improved!
+
+## Need Help?
+
+- **Technical Documentation**: See [Technical Documentation](doc/TECHNICAL.md) for developers
+- **Process Documentation**: See [Process Documentation](doc/PROCESS.md) for development workflows
+- **Issues**: Found a bug or have a feature request? Open an issue on [GitHub](https://github.com/inandi/stringscope/issues)
+- **Questions**: Check the documentation or open a discussion
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- **VS Code**: Version 1.99.0 or higher
+- **No Additional Dependencies**: Works out of the box
 
-## Extension Settings
+## License
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+This project is licensed under the MIT License - feel free to use it however you'd like!
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Made with ❤️ by Gobinda Nandi**
