@@ -1,5 +1,15 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+/**
+ * StringScope Extension Main Module
+ * 
+ * VS Code extension for analyzing selected text strings with a status bar indicator.
+ * Provides functionality to view string length, character indices, ASCII values, and Unicode information.
+ * 
+ * @author Gobinda Nandi <01ampoule_zero@icloud.com>
+ * @since 0.0.1 [07-12-2025]
+ * @version 0.0.1
+ * @copyright © 2025 Gobinda Nandi. All rights reserved.
+ */
+
 import * as vscode from 'vscode';
 
 // Status bar item for displaying string length
@@ -8,9 +18,13 @@ let currentStringContent: string | null = null;
 let currentSelectedText: string | null = null;
 
 /**
- * Extracts string content from selected text if it's a quoted string
- * @param text The selected text
- * @returns The string content without quotes, or null if not a valid string
+ * Extracts string content from selected text if it's a quoted string.
+ * Supports both single and double quotes, including multiline strings.
+ * 
+ * @param {string} text - The selected text to extract content from
+ * @returns {string | null} The string content without quotes, or null if not a valid quoted string
+ * @since 0.0.1 [07-12-2025]
+ * @version 0.0.1
  */
 function extractStringContent(text: string): string | null {
 	if (!text || text.length < 2) {
@@ -31,9 +45,15 @@ function extractStringContent(text: string): string | null {
 }
 
 /**
- * Updates the status bar based on current selection
+ * Updates the status bar based on current text selection.
+ * Shows string length for any selected text, and hides the status bar when nothing is selected.
+ * For quoted strings, displays the length of content without quotes.
+ * 
+ * @returns {void}
+ * @since 0.0.1 [07-12-2025]
+ * @version 0.0.1
  */
-function updateStatusBar() {
+function updateStatusBar(): void {
 	if (!statusBarItem) {
 		return;
 	}
@@ -79,7 +99,14 @@ function updateStatusBar() {
 }
 
 /**
- * Gets character name/description
+ * Gets a human-readable name or description for a character.
+ * Identifies special control characters and categorizes printable vs non-printable characters.
+ * 
+ * @param {string} char - The character to get the name for
+ * @param {number} charCode - The character code (Unicode/ASCII value)
+ * @returns {string} A descriptive name for the character
+ * @since 0.0.1 [07-12-2025]
+ * @version 0.0.1
  */
 function getCharacterName(char: string, charCode: number): string {
 	if (char === ' ') {
@@ -116,9 +143,15 @@ function getCharacterName(char: string, charCode: number): string {
 }
 
 /**
- * Shows a detailed tooltip with all character indices, ASCII values, and other info
+ * Shows a detailed tooltip with all character information.
+ * Displays a QuickPick dialog showing each character with its index position,
+ * ASCII value, Unicode code point, character name, decimal, and hexadecimal values.
+ * 
+ * @returns {void}
+ * @since 0.0.1 [07-12-2025]
+ * @version 0.0.1
  */
-function showDetailedTooltip() {
+function showDetailedTooltip(): void {
 	// Use currentStringContent if it's a quoted string, otherwise use currentSelectedText
 	const textToAnalyze = currentStringContent || currentSelectedText;
 	
@@ -183,9 +216,16 @@ function showDetailedTooltip() {
 	quickPick.onDidHide(() => quickPick.dispose());
 }
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+/**
+ * Activates the extension.
+ * Sets up the status bar item, registers commands, and initializes selection listeners.
+ * 
+ * @param {vscode.ExtensionContext} context - The VS Code extension context
+ * @returns {void}
+ * @since 0.0.1 [07-12-2025]
+ * @version 0.0.1
+ */
+export function activate(context: vscode.ExtensionContext): void {
 	console.log('StringScope extension is now active!');
 
 	// Create status bar item
@@ -226,8 +266,15 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 }
 
-// This method is called when your extension is deactivated
-export function deactivate() {
+/**
+ * Deactivates the extension.
+ * Cleans up resources when the extension is deactivated.
+ * 
+ * @returns {void}
+ * @since 0.0.1 [07-12-2025]
+ * @version 0.0.1
+ */
+export function deactivate(): void {
 	if (statusBarItem) {
 		statusBarItem.dispose();
 	}

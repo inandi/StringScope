@@ -1,8 +1,14 @@
 {
   "name": "stringscope",
   "displayName": "StringScope",
-  "description": "",
+  "description": "Analyze selected text strings with a status bar indicator",
   "version": "0.0.1",
+  "publisher": "iNandi",
+  "icon": "media/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inandi/stringscope.git"
+  },
   "engines": {
     "vscode": "^1.99.0"
   },
