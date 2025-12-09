@@ -1,3 +1,27 @@
+# Release v1.1.1 - 2025-12-09
+
+This release introduces below new features, performance improvements, and bug fixes.
+
+## New Features
+- NA
+
+## Improvements
+- NA
+
+## Bug Fixes
+- NA
+
+## Deprecated Features
+- NA
+
+## Known Issues
+- NA
+
+## Acknowledgments
+- NA
+
+---
+
 # Release v1.1.0 - 2025-12-09
 
 This release introduces below new features, performance improvements, and bug fixes.
