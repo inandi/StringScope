@@ -1,3 +1,13 @@
+# Release v1.1.0 - 2025-12-09
+
+This release introduces below new features, performance improvements, and bug fixes.
+
+## Improvements
+- Changed activation event from `"*"` to `"onStartupFinished"` to improve VS Code startup performance
+- Extension now activates after VS Code finishes loading instead of immediately, reducing startup impact
+
+---
+
 # Release v1.0.1 - 2025-12-07
 
 This release introduces the initial version of StringScope, a VS Code extension for analyzing selected text strings with real-time character information.
