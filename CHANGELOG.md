@@ -2,23 +2,8 @@
 
 This release introduces below new features, performance improvements, and bug fixes.
 
-## New Features
-- NA
-
-## Improvements
-- NA
-
 ## Bug Fixes
-- NA
-
-## Deprecated Features
-- NA
-
-## Known Issues
-- NA
-
-## Acknowledgments
-- NA
+- Fix package
 
 ---
 
@@ -98,8 +83,3 @@ This release introduces the initial version of StringScope, a VS Code extension 
 - Built with VS Code Extension API
 - TypeScript for type safety
 - VS Code community for excellent extension development tools
-
----
-
----
-
