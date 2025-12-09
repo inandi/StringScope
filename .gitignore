@@ -137,3 +137,6 @@ dist
 
 .DS_Store
 dev.md
+
+# Publishing secrets
+.publish-secrets
