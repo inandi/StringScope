@@ -6,51 +6,21 @@
  * 
  * @author Gobinda Nandi <01ampoule_zero@icloud.com>
  * @since 0.0.1 [07-12-2025]
- * @version 0.0.1
- * @copyright © 2025 Gobinda Nandi. All rights reserved.
+ * @version 2.0.0
+ * @copyright (c) 2025 Gobinda Nandi
  */
 
 import * as vscode from 'vscode';
 
 // Status bar item for displaying string length
 let statusBarItem: vscode.StatusBarItem;
-let currentStringContent: string | null = null;
 let currentSelectedText: string | null = null;
-
-/**
- * Extracts string content from selected text if it's a quoted string.
- * Supports both single and double quotes, including multiline strings.
- * 
- * @param {string} text - The selected text to extract content from
- * @returns {string | null} The string content without quotes, or null if not a valid quoted string
- * @since 0.0.1 [07-12-2025]
- * @version 0.0.1
- */
-function extractStringContent(text: string): string | null {
-	if (!text || text.length < 2) {
-		return null;
-	}
-
-	// Check for double quotes (supports multiline)
-	if (text.startsWith('"') && text.endsWith('"')) {
-		return text.slice(1, -1);
-	}
-	
-	// Check for single quotes (supports multiline)
-	if (text.startsWith("'") && text.endsWith("'")) {
-		return text.slice(1, -1);
-	}
-	
-	return null;
-}
 
 /**
  * Updates the status bar based on current text selection.
  * Shows string length for any selected text, and hides the status bar when nothing is selected.
- * For quoted strings, displays the length of content without quotes.
  * 
  * @returns {void}
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 function updateStatusBar(): void {
@@ -61,7 +31,6 @@ function updateStatusBar(): void {
 	const editor = vscode.window.activeTextEditor;
 	
 	if (!editor) {
-		currentStringContent = null;
 		currentSelectedText = null;
 		statusBarItem.hide();
 		return;
@@ -71,7 +40,6 @@ function updateStatusBar(): void {
 	
 	// Check if there's an actual selection (not just a cursor)
 	if (selection.isEmpty) {
-		currentStringContent = null;
 		currentSelectedText = null;
 		statusBarItem.hide();
 		return;
@@ -80,22 +48,9 @@ function updateStatusBar(): void {
 	const selectedText = editor.document.getText(selection);
 	currentSelectedText = selectedText;
 	
-	// Try to extract string content if it's a quoted string
-	const stringContent = extractStringContent(selectedText);
-
-	if (stringContent !== null) {
-		// It's a quoted string - show length of content (without quotes) and enable click
-		currentStringContent = stringContent;
-		statusBarItem.text = `$(symbol-string) StringScope: ${stringContent.length}`;
-		statusBarItem.tooltip = `Click to view character details (index, ASCII, Unicode)`;
-		statusBarItem.show();
-	} else {
-		// It's not a quoted string - just show the length of selected text
-		currentStringContent = null;
-		statusBarItem.text = `$(symbol-string) StringScope: ${selectedText.length}`;
-		statusBarItem.tooltip = `Click to view character details (index, ASCII, Unicode)`;
-		statusBarItem.show();
-	}
+	statusBarItem.text = `$(symbol-string) StringScope: ${selectedText.length}`;
+	statusBarItem.tooltip = `Click to view character details (index, ASCII, Unicode)`;
+	statusBarItem.show();
 }
 
 /**
@@ -105,7 +60,6 @@ function updateStatusBar(): void {
  * @param {string} char - The character to get the name for
  * @param {number} charCode - The character code (Unicode/ASCII value)
  * @returns {string} A descriptive name for the character
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 function getCharacterName(char: string, charCode: number): string {
@@ -148,29 +102,22 @@ function getCharacterName(char: string, charCode: number): string {
  * ASCII value, Unicode code point, character name, decimal, and hexadecimal values.
  * 
  * @returns {void}
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 function showDetailedTooltip(): void {
-	// Use currentStringContent if it's a quoted string, otherwise use currentSelectedText
-	const textToAnalyze = currentStringContent || currentSelectedText;
-	
-	if (!textToAnalyze) {
+	if (!currentSelectedText) {
 		return;
 	}
 
 	// Create a quick pick to display character details
 	const quickPick = vscode.window.createQuickPick();
-	const displayText = currentStringContent 
-		? `"${currentStringContent}"` 
-		: JSON.stringify(textToAnalyze);
-	quickPick.title = `StringScope - Character Details (Length: ${textToAnalyze.length})`;
-	quickPick.placeholder = `Text: ${displayText}`;
+	quickPick.title = `StringScope - Character Details (Length: ${currentSelectedText.length})`;
+	quickPick.placeholder = `Text: ${JSON.stringify(currentSelectedText)}`;
 	
 	const items: vscode.QuickPickItem[] = [];
 	
-	for (let i = 0; i < textToAnalyze.length; i++) {
-		const char = textToAnalyze[i];
+	for (let i = 0; i < currentSelectedText.length; i++) {
+		const char = currentSelectedText[i];
 		const charCode = char.charCodeAt(0);
 		let displayChar: string;
 		let description: string = '';
@@ -222,7 +169,6 @@ function showDetailedTooltip(): void {
  * 
  * @param {vscode.ExtensionContext} context - The VS Code extension context
  * @returns {void}
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 export function activate(context: vscode.ExtensionContext): void {
@@ -271,7 +217,6 @@ export function activate(context: vscode.ExtensionContext): void {
  * Cleans up resources when the extension is deactivated.
  * 
  * @returns {void}
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 export function deactivate(): void {

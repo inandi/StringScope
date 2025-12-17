@@ -210,8 +210,7 @@ Follow Semantic Versioning (SemVer): `MAJOR.MINOR.PATCH`
 
 - [ ] Status bar appears on text selection
 - [ ] Status bar hides when no selection
-- [ ] Correct length displayed for regular text
-- [ ] Correct length displayed for quoted strings (without quotes)
+- [ ] Correct length displayed for any text (all characters counted equally)
 - [ ] Character details dialog opens on click
 - [ ] All character information displays correctly
 - [ ] Special characters display with symbols
