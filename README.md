@@ -1,9 +1,9 @@
 <div align="center">
-  <h1>StringScope [Beta]</h1>
-  <p><strong>Your String Analysis Assistant for VS Code</strong></p>
+  <h1>StringScope</h1>
+  <p><strong>String Analysis Tool</strong></p>
 </div>
 
-Need to quickly check string length, character indices, or ASCII values? StringScope provides instant string analysis right in your VS Code status bar with detailed character information at your fingertips!
+Need to quickly check string length, character indices, or ASCII values? StringScope provides instant string analysis right in your VS Code/Cursor status bar with detailed character information at your fingertips!
 
 ## What is StringScope?
 
