@@ -6,8 +6,8 @@
  * 
  * @author Gobinda Nandi <01ampoule_zero@icloud.com>
  * @since 0.0.1 [07-12-2025]
- * @version 0.0.1
- * @copyright © 2025 Gobinda Nandi. All rights reserved.
+ * @version 2.0.0
+ * @copyright (c) 2025 Gobinda Nandi
  */
 
 import * as vscode from 'vscode';
@@ -21,7 +21,6 @@ let currentSelectedText: string | null = null;
  * Shows string length for any selected text, and hides the status bar when nothing is selected.
  * 
  * @returns {void}
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 function updateStatusBar(): void {
@@ -61,7 +60,6 @@ function updateStatusBar(): void {
  * @param {string} char - The character to get the name for
  * @param {number} charCode - The character code (Unicode/ASCII value)
  * @returns {string} A descriptive name for the character
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 function getCharacterName(char: string, charCode: number): string {
@@ -104,7 +102,6 @@ function getCharacterName(char: string, charCode: number): string {
  * ASCII value, Unicode code point, character name, decimal, and hexadecimal values.
  * 
  * @returns {void}
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 function showDetailedTooltip(): void {
@@ -172,7 +169,6 @@ function showDetailedTooltip(): void {
  * 
  * @param {vscode.ExtensionContext} context - The VS Code extension context
  * @returns {void}
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 export function activate(context: vscode.ExtensionContext): void {
@@ -221,7 +217,6 @@ export function activate(context: vscode.ExtensionContext): void {
  * Cleans up resources when the extension is deactivated.
  * 
  * @returns {void}
- * @since 0.0.1 [07-12-2025]
  * @version 0.0.1
  */
 export function deactivate(): void {
