@@ -2,7 +2,7 @@
 
 **Version:** 0.0.1  
 **Last Updated:** 07-12-2025  
-**Author:** Gobinda Nandi <01ampoule_zero@icloud.com>
+**Author:** Gobinda Nandi <gobinda.nandi.public@gmail.com>
 
 ## Development Workflow
 
@@ -82,7 +82,7 @@ All functions must include JSDoc comments following this format:
  * Brief description of the module.
  * Additional context and purpose.
  * 
- * @author Gobinda Nandi <01ampoule_zero@icloud.com>
+ * @author Gobinda Nandi <gobinda.nandi.public@gmail.com>
  * @since 0.0.1 [DD-MM-YYYY]
  * @version 0.0.1
  * @copyright © 2025 Gobinda Nandi. All rights reserved.
@@ -210,8 +210,7 @@ Follow Semantic Versioning (SemVer): `MAJOR.MINOR.PATCH`
 
 - [ ] Status bar appears on text selection
 - [ ] Status bar hides when no selection
-- [ ] Correct length displayed for regular text
-- [ ] Correct length displayed for quoted strings (without quotes)
+- [ ] Correct length displayed for any text (all characters counted equally)
 - [ ] Character details dialog opens on click
 - [ ] All character information displays correctly
 - [ ] Special characters display with symbols

@@ -1,3 +1,25 @@
+# Release v2.0.2 - 2026-02-05
+
+## Improvements
+- Update author email in documentation (PROCESS.md, TECHNICAL.md, extension.ts) for consistency
+
+---
+
+# Release v2.0.1 - 2026-02-05
+
+This release introduces below new features, performance improvements, and bug fixes.
+
+## Improvements
+- Status bar now treats all characters equally in length calculations (no special handling for quoted strings)
+- Refactored README and documentation for clarity
+- Removed deprecated string extraction logic from extension code
+- Updated copyright notice and removed redundant @since tags from documentation
+- Cleaned up whitespace in extension.ts for improved code readability and consistency
+- CHANGELOG.md included in published package (removed from .vscodeignore)
+- Cleaned up release notes in release.md and release.md.sample
+
+---
+
 # Release v1.1.1 - 2025-12-09
 
 This release introduces below new features, performance improvements, and bug fixes.
