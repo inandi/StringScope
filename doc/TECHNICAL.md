@@ -22,42 +22,22 @@ The main extension module handles:
 
 **Key Variables:**
 - `statusBarItem`: VS Code status bar item instance
-- `currentStringContent`: Extracted string content (without quotes) for quoted strings
-- `currentSelectedText`: Currently selected text (raw selection)
+- `currentSelectedText`: Currently selected text
 
-#### 2. String Extraction Module
-
-**Function:** `extractStringContent(text: string): string | null`
-
-- **Purpose:** Extracts string content from quoted text selections
-- **Supported Formats:**
-  - Double quotes: `"text"`
-  - Single quotes: `'text'`
-  - Multiline strings (both quote types)
-- **Returns:** String content without quotes, or `null` if not a valid quoted string
-
-**Algorithm:**
-1. Validates input (minimum 2 characters for quotes)
-2. Checks for double quote wrapper
-3. Checks for single quote wrapper
-4. Returns extracted content or null
-
-#### 3. Status Bar Update Module
+#### 2. Status Bar Update Module
 
 **Function:** `updateStatusBar(): void`
 
 - **Purpose:** Updates the status bar based on current text selection
 - **Behavior:**
   - Hides status bar when no selection exists
-  - Shows length for any selected text
-  - For quoted strings: displays content length (without quotes)
-  - For regular text: displays selection length
+  - Shows total length for any selected text (all characters treated equally)
 - **Event Triggers:**
   - Text selection changes (keyboard/mouse)
   - Active editor changes
   - Initial activation
 
-#### 4. Character Analysis Module
+#### 3. Character Analysis Module
 
 **Function:** `getCharacterName(char: string, charCode: number): string`
 
@@ -76,7 +56,7 @@ The main extension module handles:
   - `\b` → "Backspace"
   - `\0` → "Null"
 
-#### 5. Character Details Display Module
+#### 4. Character Details Display Module
 
 **Function:** `showDetailedTooltip(): void`
 
@@ -110,8 +90,6 @@ User Selection
 onDidChangeTextEditorSelection Event
     ↓
 updateStatusBar()
-    ↓
-extractStringContent() [if quoted]
     ↓
 Update Status Bar Item
     ↓
@@ -202,20 +180,18 @@ StringScope/
 ## Performance Considerations
 
 1. **Event Handling:** Selection change events fire frequently; `updateStatusBar()` is lightweight
-2. **Memory:** Minimal state maintained (3 variables)
+2. **Memory:** Minimal state maintained (2 variables)
 3. **UI Updates:** Status bar updates are efficient; QuickPick creation is on-demand
 4. **Character Analysis:** Performed only when user clicks status bar (lazy evaluation)
 
 ## Limitations
 
-1. **Quote Detection:** Only detects strings that start and end with the same quote type
-2. **Character Encoding:** Assumes UTF-16 encoding (JavaScript default)
-3. **Large Strings:** QuickPick may have performance issues with very long strings (>1000 characters)
-4. **Multiline Display:** Special characters in multiline strings may display differently
+1. **Character Encoding:** Assumes UTF-16 encoding (JavaScript default)
+2. **Large Strings:** QuickPick may have performance issues with very long strings (>1000 characters)
+3. **Multiline Display:** Special characters in multiline strings may display differently
 
 ## Future Enhancements
 
-- Support for template literals (backticks)
 - Character frequency analysis
 - String comparison utilities
 - Export character details to file
