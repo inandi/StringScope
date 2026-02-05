@@ -1,3 +1,10 @@
+# Release v2.0.2 - 2026-02-05
+
+## Improvements
+- Update author email in documentation (PROCESS.md, TECHNICAL.md, extension.ts) for consistency
+
+---
+
 # Release v2.0.1 - 2026-02-05
 
 This release introduces below new features, performance improvements, and bug fixes.
