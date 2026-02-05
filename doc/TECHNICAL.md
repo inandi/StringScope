@@ -2,7 +2,7 @@
 
 **Version:** 0.0.1  
 **Last Updated:** 07-12-2025  
-**Author:** Gobinda Nandi <01ampoule_zero@icloud.com>
+**Author:** Gobinda Nandi <gobinda.nandi.public@gmail.com>
 
 ## Overview
 

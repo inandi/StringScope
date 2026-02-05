@@ -2,7 +2,7 @@
 
 **Version:** 0.0.1  
 **Last Updated:** 07-12-2025  
-**Author:** Gobinda Nandi <01ampoule_zero@icloud.com>
+**Author:** Gobinda Nandi <gobinda.nandi.public@gmail.com>
 
 ## Development Workflow
 
@@ -82,7 +82,7 @@ All functions must include JSDoc comments following this format:
  * Brief description of the module.
  * Additional context and purpose.
  * 
- * @author Gobinda Nandi <01ampoule_zero@icloud.com>
+ * @author Gobinda Nandi <gobinda.nandi.public@gmail.com>
  * @since 0.0.1 [DD-MM-YYYY]
  * @version 0.0.1
  * @copyright © 2025 Gobinda Nandi. All rights reserved.

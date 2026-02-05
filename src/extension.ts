@@ -4,7 +4,7 @@
  * VS Code extension for analyzing selected text strings with a status bar indicator.
  * Provides functionality to view string length, character indices, ASCII values, and Unicode information.
  * 
- * @author Gobinda Nandi <01ampoule_zero@icloud.com>
+ * @author Gobinda Nandi <gobinda.nandi.public@gmail.com>
  * @since 0.0.1 [07-12-2025]
  * @version 2.0.0
  * @copyright (c) 2025 Gobinda Nandi
