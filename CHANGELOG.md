@@ -1,3 +1,10 @@
+# Release v2.1.2 - 2026-04-18
+
+## Improvements
+- Replaced the extension icon asset from PNG to JPG and aligned manifest references with the new logo file.
+
+---
+
 # Release v2.1.1 - 2026-04-18
 
 ## Improvements

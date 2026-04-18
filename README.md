@@ -2,8 +2,8 @@
   <h1>StringScope</h1>
   <p><strong>String Analysis Tool</strong></p>
   <p>
-    <img alt="Version" src="https://img.shields.io/badge/Version-2.1.1-green" />
-    <img alt="Updated On" src="https://img.shields.io/badge/Updated%20On-February%202026-blue" />
+    <img alt="Version" src="https://img.shields.io/badge/Version-2.1.2-green" />
+    <img alt="Updated On" src="https://img.shields.io/badge/Updated%20On-April%202026-blue" />
     <img alt="Released On" src="https://img.shields.io/badge/Released%20On-December%202025-orange" />
   </p>
 </div>
