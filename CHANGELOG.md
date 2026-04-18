@@ -1,3 +1,27 @@
+# Release v2.1.3 - 2026-04-18
+
+## Improvements
+- Updated README badges to reflect the latest metadata updates.
+- Linked the author name in README for improved visibility and easier navigation.
+- Updated project/package metadata to align with the latest release state.
+
+---
+
+# Release v2.1.2 - 2026-04-18
+
+## Improvements
+- Replaced the extension icon asset from PNG to JPG and aligned manifest references with the new logo file.
+
+---
+
+# Release v2.1.1 - 2026-04-18
+
+## Improvements
+- Updated project version to align with the latest release metadata.
+- Enhanced README header with version and timeline badges for better visibility.
+
+---
+
 # Release v2.0.2 - 2026-02-05
 
 ## Improvements
