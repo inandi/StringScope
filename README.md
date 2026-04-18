@@ -1,6 +1,11 @@
 <div align="center">
   <h1>StringScope</h1>
   <p><strong>String Analysis Tool</strong></p>
+  <p>
+    <img alt="Version" src="https://img.shields.io/badge/Version-2.1.1-green" />
+    <img alt="Updated On" src="https://img.shields.io/badge/Updated%20On-February%202026-blue" />
+    <img alt="Released On" src="https://img.shields.io/badge/Released%20On-December%202025-orange" />
+  </p>
 </div>
 
 Need to quickly check string length, character indices, or ASCII values? StringScope provides instant string analysis right in your VS Code/Cursor status bar with detailed character information at your fingertips!

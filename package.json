@@ -2,7 +2,7 @@
   "name": "stringscope",
   "displayName": "StringScope",
   "description": "Analyze selected text strings with a status bar indicator",
-  "version": "2.0.2",
+  "version": "2.1.1",
   "publisher": "iNandi",
   "icon": "media/logo.png",
   "repository": {
