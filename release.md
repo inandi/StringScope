@@ -1,3 +1,17 @@
+## New Features
+- NA
+
 ## Improvements
-- Updated project version to align with the latest release metadata.
-- Enhanced README header with version and timeline badges for better visibility.
+- NA
+
+## Bug Fixes
+- NA
+
+## Deprecated Features
+- NA
+
+## Known Issues
+- NA
+
+## Acknowledgments
+- NA

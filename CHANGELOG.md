@@ -1,3 +1,11 @@
+# Release v2.1.1 - 2026-04-18
+
+## Improvements
+- Updated project version to align with the latest release metadata.
+- Enhanced README header with version and timeline badges for better visibility.
+
+---
+
 # Release v2.0.2 - 2026-02-05
 
 ## Improvements
