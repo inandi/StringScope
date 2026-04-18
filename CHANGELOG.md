@@ -1,3 +1,12 @@
+# Release v2.1.3 - 2026-04-18
+
+## Improvements
+- Updated README badges to reflect the latest metadata updates.
+- Linked the author name in README for improved visibility and easier navigation.
+- Updated project/package metadata to align with the latest release state.
+
+---
+
 # Release v2.1.2 - 2026-04-18
 
 ## Improvements
