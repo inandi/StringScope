@@ -117,4 +117,4 @@ This project is licensed under the MIT License - feel free to use it however you
 
 ---
 
-**Made with ❤️ by Gobinda Nandi**
+**Made with ❤️ by [Gobinda Nandi](https://x.com/iamGobinda)**
